@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pabia_05TP1</title>
+</head>
+<body>
+    <h2>Please enter your age:</h2>
+    <input type = "number" id="ageInput" value="">
+    <button onclick="confirmAge()">Submit</button>
+
+    <h3>Please enter a number:</h3>
+    <input type = "number" id="numInput" value="">
+    <button onclick="checkNum()">Submit</button>
+
+    <p><strong>Print the numbers 0-30, one number per line:</strong></p>
+    <p id="print1"></p>
+    <br>
+    <p><strong>Print only the even values from 0-40, one number per line:</strong></p>
+    <p id="print2"></p>
+    <br>
+    <p><strong>Print the number 40 to 10 in descending order, but only if the numbers are multiple by 3:</strong></p>
+    <p id="print3"></p>
+
+    <script>
+        function confirmAge(){
+            var age = parseInt(document.getElementById("ageInput").value);
+
+            if(age < 25){
+                alert("Age Restricted");
+            }
+            else{
+                alert("Age Confirmed");
+            }
+        }
+
+        function checkNum(){
+            var num = parseInt(document.getElementById("numInput").value);
+
+            if(num < 100){
+                alert("Number is less than 100");
+            }
+            else{
+                alert("Number is greater than 100");
+            }
+        }
+
+        var number1 = "";
+        for(var i=0; i<=30; i++){
+            number1 += i + "<br>";
+        }
+        document.getElementById("print1").innerHTML = number1;
+
+        var number2 = "";
+        for(var i=0; i<=20; i++){
+            number2 += i*2 + "<br>";
+        }
+        document.getElementById("print2").innerHTML = number2;
+
+        var number3 = "";
+        for(var i=40; i>=10; i--){
+            if(i % 3 === 0){
+                number3 += i + "<br>"
+            }
+        }
+        document.getElementById("print3").innerHTML = number3;
+
+    </script>
+</body>
+</html>
